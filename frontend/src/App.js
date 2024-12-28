@@ -384,21 +384,37 @@ function App() {
       </div>
 
       <div className="max-w-4xl mx-auto relative">
-        {/* Glowing title section */}
+        {/* Enhanced title section */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           className="text-center mb-16 relative"
         >
-          <h1 className="text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-pink-600 mb-4 filter drop-shadow-lg">
-            Excel Translation Studio
-          </h1>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          <div className="relative inline-block">
+            <h1 className="text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600 mb-4 filter drop-shadow-lg">
+              Excel Translation Studio
+            </h1>
+            <div className="absolute -inset-4 bg-gradient-to-r from-purple-500/20 via-pink-500/20 to-blue-500/20 blur-2xl -z-10 rounded-full"></div>
+          </div>
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto mb-2">
             Transform your Excel documents into any language with AI-powered precision
           </p>
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-gradient-to-r from-purple-500/20 via-pink-500/20 to-blue-500/20 blur-3xl -z-10"></div>
+          <div className="flex items-center justify-center space-x-2 text-sm text-gray-500">
+            <span>Powered by</span>
+            <div className="flex items-center space-x-2">
+              {Object.keys(providerIcons).map((provider) => (
+                <img
+                  key={provider}
+                  src={providerIcons[provider]}
+                  alt={provider}
+                  className="w-5 h-5 object-contain opacity-50 hover:opacity-100 transition-opacity"
+                />
+              ))}
+            </div>
+          </div>
         </motion.div>
 
+        {/* Rest of your components */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -596,6 +612,45 @@ function App() {
           </div>
         </motion.div>
       </div>
+
+      {/* Beautiful footer */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.8 }}
+        className="mt-16 text-center relative"
+      >
+        <div className="relative inline-block">
+          <div className="flex items-center justify-center space-x-2 text-gray-600">
+            <span>Made with</span>
+            <motion.div
+              animate={{
+                scale: [1, 1.2, 1],
+              }}
+              transition={{
+                duration: 2,
+                repeat: Infinity,
+                repeatType: "reverse",
+              }}
+            >
+              <span role="img" aria-label="heart" className="text-red-500 text-xl">❤️</span>
+            </motion.div>
+            <span>by</span>
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              className="relative group"
+            >
+              <span className="font-semibold bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-pink-600">
+                Yate Asske
+              </span>
+              <div className="absolute -inset-1 bg-gradient-to-r from-purple-500/20 to-pink-500/20 blur group-hover:opacity-100 opacity-0 transition-opacity rounded-lg"></div>
+            </motion.div>
+          </div>
+          <div className="mt-2 text-sm text-gray-500">
+            &copy; {new Date().getFullYear()} | All rights reserved
+          </div>
+        </div>
+      </motion.div>
     </div>
   );
 }
