@@ -4,6 +4,8 @@
 
 Excel Translation Studio is an advanced, AI-powered web application designed to seamlessly translate Excel files across multiple languages while preserving the original document's formatting and structure. Leveraging cutting-edge language models from various AI providers, this tool offers a robust, user-friendly solution for multilingual document translation.
 
+![Excel Translation Studio Interface](img/application_image.png)
+
 ## ✨ Key Features
 
 ### 🤖 Multi-Provider AI Translation
